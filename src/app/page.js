@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showAssignment2, setShowAssignment2] = useState(false);
 
   const container = {
     hidden: { opacity: 0 },
@@ -168,7 +169,7 @@ that make a difference while continuously growing in this dynamic field.
           className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-center px-4 py-12"
         >
           <motion.h2 variants={item} className="text-4xl font-bold text-teal-400">
-            Assignment
+            Assignment 1
           </motion.h2>
           <div className="mt-8 max-w-3xl space-y-6 text-left text-gray-400">
             {[
@@ -204,6 +205,147 @@ that make a difference while continuously growing in this dynamic field.
               </motion.div>
             ))}
           </div>
+          {!showAssignment2 && (
+            <motion.button className="mt-6 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-lg hover:bg-blue-700 transition-all" onClick={() => setShowAssignment2(true)}>
+              Read More
+            </motion.button>
+          )}
+           {showAssignment2 && (
+  <motion.div className="mt-12 text-left text-gray-700 max-w-3xl">
+    <motion.h2 className="text-4xl font-bold text-teal-400">
+      Assignment 2
+    </motion.h2>
+    <motion.h3 className="text-2xl font-bold text-yellow-300 mt-4">
+    Problem Statement:
+    </motion.h3>
+    <p className="text-gray-400">
+   AI Image Recognition System Misclassifies Objects
+
+Scenario:
+
+A retail store uses an AI-powered image recognition system to identify products at checkout. However, customers and cashiers report that the system frequently misclassifies products, leading to incorrect prices and billing errors.
+
+To resolve this issue, we will identify the root cause, debug the system, isolate the problem, and implement a solution.
+    </p>
+
+    <motion.h3 className="text-2xl font-bold text-yellow-300 mt-4">
+    Step-by-Step Debugging and Problem-Solving Process:
+    </motion.h3>
+    
+    <motion.h3 className="text-2xl font-bold text-yellow-300 mt-4">
+      Step 1. Identify the Issue
+
+    </motion.h3>
+    <ul className="list-disc pl-6 text-gray-400">
+      <li>	Collect reports from cashiers and customers about misclassified products.
+      </li>
+      <li>	Analyze error logs to find patterns (e.g., specific products frequently) 
+      </li>
+      <li> If the food will expire in 3 days or less, show an alert.</li>
+      <li> Otherwise, tell the user how many days are left.</li>
+    </ul>
+    <motion.h4 className="text-xl font-bold text-blue-400 mt-3">
+    Key Observations:
+    </motion.h4>
+    <ul className="list-disc pl-6 text-gray-400">
+      <li>	Small and similar-looking products (e.g., different brands of bottled water) are often confused.
+      </li>
+      <li>	Poor lighting conditions cause recognition failures.
+      </li>
+      <li>	The AI struggles with occluded (partially hidden) product</li>
+    </ul>
+
+    <motion.h3 className="text-2xl font-bold text-yellow-300 mt-4">
+      Step 2. Debug the AI Model
+
+    </motion.h3>
+    <ul className="list-disc pl-6 text-gray-400">
+      <li>	Check how the system processes images.
+      </li>
+      <li>	Examine the dataset used to train the AI.
+      </li>
+      <li>	Test the AI with controlled inputs and analyze its decision-making process.</li>
+    </ul>
+    <motion.h4 className="text-xl font-bold text-blue-400 mt-3">
+    Possible Causes Identified:
+    </motion.h4>
+    <ul className="list-disc pl-6 text-gray-400">
+      <li>The AI training dataset lacks diverse product images.
+      </li>
+      <li>The model has difficulty distinguishing similar products due to feature overlap.
+      </li>
+      <li>The system struggles under low lighting conditions or poor image resolution.</li>
+    </ul>
+    <motion.h3 className="text-2xl font-bold text-yellow-300 mt-4">
+      Step 3. Isolate the Problem
+
+    </motion.h3>
+    <ul className="list-disc pl-6 text-gray-400">
+      <li>Test individual products under different conditions (lighting, angles, partial occlusion).
+      </li>
+      <li>Compare expected vs. actual classifications.
+      </li>
+      <li>Use visualization tools to check how the AI extracts product features.
+      </li>
+    </ul>
+    <motion.h4 className="text-xl font-bold text-blue-400 mt-3">
+    Findings: 
+    </motion.h4>
+    <ul className="list-disc pl-6 text-gray-400">
+      <li>	Some product images in the training data are blurry or low-quality.
+      </li>
+      <li>The model does not handle background noise well.
+      </li>
+      <li>Edge cases (e.g., damaged packaging) are not well-represented in training data.</li>
+    </ul>
+   
+    <motion.h3 className="text-2xl font-bold text-yellow-300 mt-4">
+      Step 4. Implement a Solution
+    </motion.h3>
+    <motion.h4 className="text-xl font-bold text-blue-400 mt-3">
+    ✅ Improve Training Data
+    </motion.h4>
+    <ul className="list-disc pl-6 text-gray-400">
+      <li>Add high-quality images of misclassified products.
+      </li>
+      <li>Include more images with different angles, lighting conditions, and partial occlusions.
+      </li>
+    </ul>
+    
+    <motion.h4 className="text-xl font-bold text-blue-400 mt-3">
+    ✅ Enhance Model Performance:
+    </motion.h4>
+    <ul className="list-disc pl-6 text-gray-400">
+      <li>Fine-tune the AI with additional labeled data.
+      </li>
+      <li>
+      Implement an advanced deep-learning model with better feature extraction.
+      </li>
+    </ul>
+     
+    <motion.h4 className="text-xl font-bold text-blue-400 mt-3">
+    ✅ Improve Image Processing:
+    </motion.h4>
+    <ul className="list-disc pl-6 text-gray-400">
+      <li>Use image preprocessing techniques (brightness correction, edge enhancement).
+      </li>
+      <li>Adjust the camera system for better lighting and clarity.
+      </li>
+    </ul>
+    <motion.h4 className="text-xl font-bold text-blue-400 mt-3">
+    ✅ Test and Validate:
+    </motion.h4>
+    <ul className="list-disc pl-6 text-gray-400">
+      <li>Run the improved model on a test set.
+      </li>
+      <li>Compare accuracy before and after improvements.
+      </li>
+      <li>	Deploy the updated system and monitor for further errors.
+      </li>
+    </ul>
+   
+  </motion.div>
+)}
         </motion.section>
       </div>
 
@@ -219,3 +361,34 @@ that make a difference while continuously growing in this dynamic field.
     </div>
   );
 }
+
+
+	
+
+
+
+
+	
+
+
+	
+
+
+		
+		
+
+		
+		
+	
+	
+
+
+
+
+
+
+
+
+	
+
+		
